@@ -1,0 +1,11 @@
+# Χρήση της βασικής εικόνας Java 17
+FROM openjdk:17-jdk-slim
+
+# Ορισμός του working directory μέσα στο container
+WORKDIR /app
+
+# Αντιγραφή του JAR αρχείου από το τοπικό σύστημα στο container
+COPY target/studentinfo.jar /app/studentinfo.jar
+
+# Εντολή για εκτέλεση της εφαρμογής
+CMD ["java", "-jar", "/app/studentinfo.jar"]
